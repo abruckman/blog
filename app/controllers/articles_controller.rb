@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  http_basic_authenticate_with name:"dhh", passwrod: "secret", except:[:index,:show]
+
   def new
   end
 

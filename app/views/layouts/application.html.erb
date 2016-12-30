@@ -9,6 +9,15 @@
   </head>
 
   <body>
+    <header>
+      <% if current_user %>
+      <%= link_to 'logout', 'sessions#destroy',
+              data: { confirm: 'Are you sure?' } %>
+      <% else %>
+      <%= link_to 'log in', 'sessions#new' %> |
+      <%= link_to 'create account', 'users#new' %>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>
